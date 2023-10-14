@@ -1,27 +1,19 @@
-# Penjelasan Komponen Stateful pada Kode React
+# Penggunaan Komponen Stateful dalam File "Contact"
 
-Kode yang diberikan merupakan contoh komponen React yang menggunakan state dan efek samping dengan bantuan React Hooks. Dalam konteks React, komponen yang menggunakan state disebut sebagai "komponen stateful", yang berbeda dari "komponen stateless".
+Dalam file "Contact.js," kita memiliki sebuah contoh penggunaan komponen stateful. Komponen "Contact" adalah komponen utama yang memanfaatkan React Hooks, seperti `useState` dan `useEffect`, untuk mengelola data pengguna dan efek samping.
 
-## Komponen Stateful
+## State Stateful
 
-Komponen stateful adalah komponen dalam React yang memiliki kemampuan untuk menyimpan dan mengelola data dalam state internalnya. Dalam kode ini, komponen `Contact` adalah contoh dari komponen stateful.
+Komponen "Contact" menggunakan React Hook `useState` untuk mengelola dua buah state:
 
-### Penggunaan State
+1. `formData`: Ini adalah state yang digunakan untuk menyimpan data yang diisi oleh pengguna dalam formulir kontak. State ini mencakup informasi seperti nama, email, dan pesan yang diisi pengguna. Setiap kali ada perubahan dalam inputan, state ini diperbarui dengan bantuan fungsi `setFormData`.
 
-Dalam kode `Contact`, kita menggunakan React Hook `useState` untuk mengelola dua buah state:
+2. `submittedData`: State ini digunakan untuk menyimpan data yang telah dikirim oleh pengguna. Ketika pengguna mengirim pesan, data tersebut ditambahkan ke dalam state ini menggunakan `setSubmittedData`. Selain itu, data ini juga disimpan di dalam `localStorage` sehingga dapat dipertahankan bahkan setelah halaman diperbarui.
 
-1. `formData`: State ini digunakan untuk menyimpan data inputan formulir seperti nama, email, dan pesan yang dimasukkan oleh pengguna. Setiap kali pengguna memasukkan data baru, state ini diperbarui dengan bantuan `setFormData`.
+## Efek Samping
 
-2. `submittedData`: State ini digunakan untuk menyimpan data yang telah dikirim oleh pengguna dan disimpan di dalam `localStorage`. Setiap kali ada data yang dikirim, state ini diperbarui dengan bantuan `setSubmittedData`.
+Efek samping diatur dengan React Hook `useEffect`. Dalam komponen "Contact," kita menggunakan `useEffect` untuk membaca dan menyimpan data dari dan ke `localStorage`. Ini memastikan bahwa data yang telah dikirim sebelumnya dapat dipulihkan saat halaman dimuat ulang.
 
-### Penggunaan useEffect
+Penggunaan komponen stateful ini memungkinkan aplikasi untuk menyimpan dan mengelola data pengguna dengan efisien, sambil memberikan pengalaman yang lebih baik kepada pengguna dengan melestarikan data mereka bahkan setelah mereka menutup atau menyegarkan halaman.
 
-Kode ini juga menggunakan React Hook `useEffect` untuk mengatur efek samping. Efek samping digunakan untuk melakukan operasi di luar siklus hidup komponen, dalam hal ini, efek samping digunakan untuk mengambil dan menyimpan data dari dan ke `localStorage`. Ini memungkinkan kita untuk mempertahankan data pengguna yang telah dikirim sebelumnya bahkan setelah halaman diperbarui.
-
-## Komponen Stateless
-
-Komponen stateless (atau functional component) adalah komponen React yang tidak memiliki state internal sendiri dan tidak menggunakan metode `render` seperti yang digunakan oleh komponen stateful tradisional.
-
-Dalam kode ini, `Header` dan `Footer` adalah contoh komponen stateless. Mereka adalah komponen sederhana yang hanya berfungsi sebagai tampilan statis dan tidak memiliki state atau efek samping.
-
-Dalam Ringkasan, komponen `Contact` adalah contoh komponen stateful dalam kode ini, sementara `Header` dan `Footer` adalah contoh komponen stateless.
+Komponen stateful ini adalah inti dari halaman kontak dalam aplikasi dan memungkinkan pengguna untuk mengirim pesan dan melihat pesan-pesan sebelumnya yang telah dikirimkan.
