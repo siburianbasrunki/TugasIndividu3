@@ -11,7 +11,6 @@ const Contact = () => {
 
   const [submittedData, setSubmittedData] = useState([]);
 
-  // Menyimpan pesan ke localStorage saat mengirim formulir
   const saveToLocalStorage = (data) => {
     const storedData = JSON.parse(
       localStorage.getItem("submittedData") || "[]"
@@ -21,7 +20,6 @@ const Contact = () => {
   };
 
   useEffect(() => {
-    // Mengambil data pesan yang sudah disimpan di localStorage
     const storedData = JSON.parse(
       localStorage.getItem("submittedData") || "[]"
     );
@@ -41,7 +39,6 @@ const Contact = () => {
       <div className="bg-light min-h-screen py-16 flex justify-center ">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {/* Formulir Input Pesan (Kiri) */}
             <div>
               <h1 className="text-5xl font-bold text-primary mb-4">
                 Hubungi Kami
@@ -109,7 +106,6 @@ const Contact = () => {
               </form>
             </div>
 
-            {/* Daftar Pesan (Kanan) */}
             <div>
               {submittedData.length > 0 && (
                 <div>

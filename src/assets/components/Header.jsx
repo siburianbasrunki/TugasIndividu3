@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 const Header = () => {
   const [messageCount, setMessageCount] = useState(0);
 
-  // Fungsi untuk mengambil jumlah pesan dari local storage
   const getMessageCount = () => {
     const storedData = JSON.parse(
       localStorage.getItem("submittedData") || "[]"
@@ -11,7 +10,6 @@ const Header = () => {
     setMessageCount(storedData.length);
   };
 
-  // Membaca jumlah pesan saat komponen dimuat
   useEffect(() => {
     getMessageCount();
   }, []);
