@@ -1,8 +1,9 @@
 # Tugas Individu 3
 **Nama:** Basrunki Siburian
+
 **NIM:** 120140007
 
-#Catatan Penggunaan Komponen Statefull
+# Catatan Penggunaan Komponen Statefull
 
 Pada file ini, saya membuat komponen stateful untuk mengelola data pengguna yang diinputkan dalam formulir kontak. Komponen "Contact" menggunakan React Hooks, seperti `useState` dan `useEffect`.
 
