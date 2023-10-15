@@ -26,6 +26,7 @@ Untuk menjalankan proyek ini, Anda dapat mengikuti langkah-langkah berikut:
    ```bash
    npm run dev
 1. Menjalankan Testing menggunakan Vitest:
+file testing ada di folder component
 
    ```bash
    npm run test
