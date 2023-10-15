@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-
+import Footer from "./Footer"
 const About = () => {
   return (
     <div>
@@ -19,6 +19,7 @@ const About = () => {
           <button className="btn btn-primary mt-6 mx-auto">Rate Website</button>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };
